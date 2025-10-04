@@ -15,13 +15,14 @@ export default function News() {
       id: 1,
       title: "Ijemba Day",
       date: "Ileya time",
-      excerpt: "Ijemba Day.",
+      excerpt: "Ijemba Day celebration and cultural festival for all residents.",
     },
     {
       id: 2,
       title: "Community Health Outreach",
       date: "2025-10-02",
-      excerpt: "Free health screening for residents at the community center.",
+      excerpt:
+        "Free health screening for residents at the community center.",
     },
   ]);
 
@@ -48,20 +49,27 @@ export default function News() {
   }, []);
 
   return (
-    <section id="news" className="bg-white rounded-2xl p-6 shadow-md">
+    <section
+      id="news"
+      className="bg-[#FFF8E1] rounded-2xl p-6 shadow-md text-[#2E7D32]"
+    >
       <div className="flex justify-between items-start">
-        <h3 className="text-2xl font-bold text-amber-900">News & Events</h3>
+        <h3 className="text-3xl font-bold text-[#FB8C00]">News & Events</h3>
         <div className="text-right">
-          <p className="text-xs text-gray-500">Ijemba Day</p>
-          <p className="font-semibold">{countdown}</p>
+          <p className="text-xs text-[#2E7D32]/70">Ijemba Day</p>
+          <p className="font-semibold text-[#FB8C00]">{countdown}</p>
         </div>
       </div>
+
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
         {news.map((n) => (
-          <article key={n.id} className="border rounded-lg p-4">
-            <h4 className="font-semibold">{n.title}</h4>
-            <time className="text-xs text-gray-500">{n.date}</time>
-            <p className="mt-2 text-sm text-gray-700">{n.excerpt}</p>
+          <article
+            key={n.id}
+            className="border border-[#2E7D32]/30 rounded-lg p-4 bg-white hover:bg-[#FFF3E0] transition-colors duration-300"
+          >
+            <h4 className="font-semibold text-[#FB8C00]">{n.title}</h4>
+            <time className="text-xs text-[#2E7D32]/60">{n.date}</time>
+            <p className="mt-2 text-sm text-[#2E7D32]">{n.excerpt}</p>
           </article>
         ))}
       </div>

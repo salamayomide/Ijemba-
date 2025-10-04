@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 type Person = {
   id: number;
@@ -30,48 +30,13 @@ const people: Person[] = [
     bio: "Successful farmer and business mentor, supporting young entrepreneurs in agriculture.",
     image: "/src/assets/leader3.jpg",
   },
-   {
-    id: 4,
-    name: "Mr. Sola Odetayo",
-    role: "Entrepreneur",
-    bio: "Successful farmer and business mentor, supporting young entrepreneurs in agriculture.",
-    image: "/src/assets/leader3.jpg",
-  },
-  {
-    id: 5,
-    name: "Mr. Sola Odetayo",
-    role: "Entrepreneur",
-    bio: "Successful farmer and business mentor, supporting young entrepreneurs in agriculture.",
-    image: "/src/assets/leader3.jpg",
-  },
-  {
-    id: 6,
-    name: "Mr. Sola Odetayo",
-    role: "Entrepreneur",
-    bio: "Successful farmer and business mentor, supporting young entrepreneurs in agriculture.",
-    image: "/src/assets/leader3.jpg",
-  },
-  {
-    id: 7,
-    name: "Mr. Sola Odetayo",
-    role: "Entrepreneur",
-    bio: "Successful farmer and business mentor, supporting young entrepreneurs in agriculture.",
-    image: "/src/assets/leader3.jpg",
-  },
-  {
-    id: 8,
-    name: "Mr. Sola Odetayo",
-    role: "Entrepreneur",
-    bio: "Successful farmer and business mentor, supporting young entrepreneurs in agriculture.",
-    image: "/src/assets/leader3.jpg",
-  }
 ];
 
-export default function People() {
+export default function PeoplePreview() {
   return (
-    <section id="people" className="bg-white rounded-2xl p-6 shadow-md">
-      <h3 className="text-2xl font-bold text-amber-900">Exceptional People</h3>
-      <p className="text-sm text-gray-600 mt-2">
+    <section id="people" className="bg-green-50 rounded-2xl p-6 shadow-md">
+      <h3 className="text-2xl font-bold text-green-800">Exceptional People</h3>
+      <p className="text-sm text-gray-700 mt-2">
         Meet some of the people who have shaped and continue to inspire Ijemba.
       </p>
 
@@ -79,18 +44,27 @@ export default function People() {
         {people.map((p) => (
           <div
             key={p.id}
-            className="rounded-lg border p-4 shadow-sm flex flex-col items-center text-center"
+            className="rounded-lg border p-4 shadow-sm bg-white flex flex-col items-center text-center hover:shadow-md transition"
           >
             <img
               src={p.image}
               alt={p.name}
-              className="h-32 w-32 object-cover rounded-full border-4 border-amber-200"
+              className="h-32 w-32 object-cover rounded-full border-4 border-green-200"
             />
-            <h4 className="mt-4 font-bold text-amber-900">{p.name}</h4>
+            <h4 className="mt-4 font-bold text-green-800">{p.name}</h4>
             <p className="text-sm text-gray-500">{p.role}</p>
             <p className="text-xs text-gray-600 mt-2">{p.bio}</p>
           </div>
         ))}
+      </div>
+
+      <div className="text-center mt-6">
+        <Link
+          to="/people"
+          className="inline-block bg-green-700 text-white px-6 py-2 rounded-full font-medium hover:bg-green-800 transition"
+        >
+          See More
+        </Link>
       </div>
     </section>
   );

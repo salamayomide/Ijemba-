@@ -1,5 +1,3 @@
-
-
 type Mosque = {
   id: number;
   name: string;
@@ -10,31 +8,31 @@ type Mosque = {
 const mosques: Mosque[] = [
   {
     id: 1,
-    name: "Ijemba Central Mosque",
-    location: "Main Town Square",
+    name: "Agarawu Mosque",
+    location: "Agarawu Area, Ijemba",
     image: "/src/assets/mosque1.jpg",
   },
   {
     id: 2,
-    name: "Ansarudeen Mosque",
-    location: "Ijemba North",
+    name: "Alagbede Mosque",
+    location: "Ile Alagbede, Ijemba",
     image: "/src/assets/mosque2.jpg",
   },
   {
     id: 3,
-    name: "Markaz Mosque",
-    location: "Ijemba West",
+    name: "Alalumkiba Mosque",
+    location: "Ita Oye",
     image: "/src/assets/mosque3.jpg",
   },
   {
     id: 4,
-    name: "Old Heritage Mosque",
-    location: "Ijemba South",
+    name: "Mogaji Mosque",
+    location: "Isale Papa",
     image: "/src/assets/mosque4.jpg",
   },
   {
     id: 5,
-    name: "Oke-Oja Mosque",
+    name: "Bale Mosque",
     location: "Market Area",
     image: "/src/assets/mosque5.jpg",
   },
@@ -48,9 +46,12 @@ const mosques: Mosque[] = [
 
 export default function Mosques() {
   return (
-    <section id="mosques" className="bg-white rounded-2xl p-6 shadow-md">
-      <h3 className="text-2xl font-bold text-amber-900">Mosques in Ijemba</h3>
-      <p className="mt-2 text-sm text-gray-600">
+    <section
+      id="mosques"
+      className="bg-[#FFF8E1] rounded-2xl p-6 shadow-md text-[#2E7D32]"
+    >
+      <h3 className="text-3xl font-bold text-[#FB8C00]">Mosques in Ijemba</h3>
+      <p className="mt-2 text-sm text-[#2E7D32]/80">
         Ijemba is blessed with many mosques that serve as centers of worship,
         learning, and unity for our community.
       </p>
@@ -59,15 +60,15 @@ export default function Mosques() {
         {mosques.map((m) => (
           <div
             key={m.id}
-            className="border rounded-lg p-3 shadow-sm flex flex-col items-center text-center"
+            className="border border-[#2E7D32]/30 rounded-lg p-3 shadow-sm flex flex-col items-center text-center bg-white hover:bg-[#FFF3E0] transition-all duration-300"
           >
             <img
               src={m.image}
               alt={m.name}
               className="h-40 w-full object-cover rounded-lg"
             />
-            <h4 className="mt-3 font-semibold text-amber-900">{m.name}</h4>
-            <p className="text-xs text-gray-600">{m.location}</p>
+            <h4 className="mt-3 font-semibold text-[#FB8C00]">{m.name}</h4>
+            <p className="text-xs text-[#2E7D32]/70">{m.location}</p>
           </div>
         ))}
       </div>
